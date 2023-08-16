@@ -2,7 +2,7 @@
 // @name                BiliBili-TextFavList
 // @name:zh-CN          BiliBili-文字收藏夹列表
 // @namespace           https://github.com/Mehver
-// @version             bata
+// @version             1.0
 // @description         (Thanks to ZEP's paid customization) Display Bilibili favourite list results in a text list, which is convenient for sorting by each column.
 // @description:zh-CN   (感谢闲鱼买家ZEP的有偿定制) 用纯文字列表的方式展示B站收藏夹结果，方便按各列排序。
 // @sponsor             ZEP
@@ -24,8 +24,8 @@
 // @resource            DataTablesCSS https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css
 // ==/UserScript==
 
-let table_font_size = await GM_getValue('table_font_size', 16);
-let network_delay = await GM_getValue('network_delay', 400);
+let table_font_size = GM_getValue('table_font_size', 16);
+let network_delay = GM_getValue('network_delay', 400);
 
 GM_registerMenuCommand('设置表格字体大小', async () => {
     let newFontSize = prompt('请输入新的字体大小（单位px）:', table_font_size);
